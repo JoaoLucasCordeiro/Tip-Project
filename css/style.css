@@ -1,0 +1,917 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+    text-decoration: none;
+}
+
+body {
+    background-color: #6D8EAD;
+    min-height: 100vh;
+    min-width: 100vw;
+
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tip-header {
+    display: flex;
+    align-items: center;
+    gap: 400px;
+    margin-bottom: 10px;
+}
+
+.tip-header i {
+    font-size: 35px;
+    color: #1F3447;
+    transition: .2s all ease-in-out;
+}
+
+.tip-header i:hover {
+    transform: scale(1.2);
+    color: #FFC000;
+}
+
+.icons {
+    display: flex;
+    gap: 30px;
+}
+
+#msg-error {
+    position: absolute;
+    right: 50%;
+    bottom: 90%;
+    display: none;
+}
+
+#msg-error span {
+    color: red;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.h1-title {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 25px;
+    color: #1F3447;
+}
+
+.container {
+
+    margin-top: 50px;
+    margin: 0 auto;
+    max-width: 950px;
+    width: 100%;
+    height: 450px;
+    padding: 30px;
+
+    display: flex;
+    justify-content: space-around;
+    border-radius: 15px;
+
+    background-color: white;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+
+}
+
+.input-numbers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 400px;
+}
+
+.input-numbers label {
+    font-weight: bold;
+    font-size: 20px;
+    color: #1F3447;
+}
+
+.numbers-bill {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.numbers-bill input {
+    padding: 10px;
+    border-radius: 7px;
+    width: 250px;
+
+    border: 2px solid #1F3447;
+    outline: none;
+    transition: all .2s ease-in-out;
+
+    font-size: 20px;
+    font-weight: bold;
+    color: #FF6600;
+}
+
+.numbers-bill input:focus {
+    border: 2px solid #FF6600;
+}
+
+.numbers-bill input:focus::placeholder {
+    color: #FF6600;
+    transition: all .2s ease-in-out;
+}
+
+.numbers-bill input::placeholder {
+    font-size: 20px;
+    color: #1F3447;
+    font-weight: bold;
+}
+
+
+
+.numbers-people {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.numbers-people input {
+    padding: 10px;
+    border-radius: 7px;
+    width: 250px;
+
+    border: 2px solid #1F3447;
+    outline: none;
+    transition: all .2s ease-in-out;
+
+    font-size: 20px;
+    font-weight: bold;
+    color: #FF6600;
+}
+
+.numbers-people input::placeholder {
+    font-size: 20px;
+    color: #1F3447;
+    font-weight: bold;
+}
+
+.numbers-people input:focus {
+    border: 2px solid #FF6600;
+}
+
+.numbers-people input:focus::placeholder {
+    color: #FF6600;
+    transition: all .2s ease-in-out;
+}
+
+.percent-tip {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.percent-tip input {
+    padding: 10px;
+    border-radius: 7px;
+    width: 250px;
+
+    border: 2px solid #1F3447;
+    outline: none;
+    transition: all .2s ease-in-out;
+
+    font-size: 20px;
+    font-weight: bold;
+    color: #FF6600;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.percent-tip input::placeholder {
+    font-size: 20px;
+    color: #1F3447;
+    font-weight: bold;
+}
+
+.percent-tip input:focus {
+    border: 2px solid #FF6600;
+}
+
+.percent-tip input:focus::placeholder {
+    color: #FF6600;
+    transition: all .2s ease-in-out;
+}
+
+
+.screen-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+
+    background-color: #FFC000;
+    width: 400px;
+    border-radius: 10px;
+    padding: 1rem;
+
+}
+
+.tip-amount {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    color: #1F3447;
+}
+
+.total-tip {
+    display: flex;
+    align-items: center;
+    gap: 79px;
+    color: #1F3447;
+
+}
+
+.amount {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#h2-result {
+    font-size: 30px;
+}
+
+.total {
+    font-size: 16px;
+}
+
+.result-total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#h2-result-total {
+    font-size: 30px;
+}
+
+#btn-reset {
+    padding: 10px;
+    width: 300px;
+    border-radius: 7px;
+
+    outline: none;
+    border: none;
+
+    font-weight: bold;
+    font-size: 19px;
+
+    background-color: #1F3447;
+    color: white;
+
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+#btn-reset:hover {
+    background-color: #FF6600;
+}
+
+@media only screen and (min-width: 350px) and (max-width: 470px) {
+
+
+    body {
+        padding: 1rem;
+    }
+
+    .tip-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        margin-bottom: 10px;
+    }
+
+    .tip-header i {
+        font-size: 15px;
+        color: #1F3447;
+
+    }
+
+    .icons {
+        display: flex;
+        gap: 20px;
+    }
+
+    .h1-title {
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 20px;
+        color: #1F3447;
+    }
+
+    .container {
+
+        margin-top: 10px;
+        max-width: 450px;
+        width: 100%;
+        height: 550px;
+        padding: 30px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 15px;
+        padding: 1rem;
+        position: relative;
+    }
+
+    #msg-error {
+        position: absolute;
+        right: 10%;
+        bottom: 95%;
+    }
+
+    #msg-error span {
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .input-numbers {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 370px;
+    }
+
+
+    .input-numbers label {
+        font-weight: bold;
+        font-size: 15px;
+        color: #1F3447;
+    }
+
+    .numbers-bill {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .numbers-bill input {
+        padding: 7px;
+        width: 250px;
+        font-size: 12px;
+
+    }
+
+    .numbers-people {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .numbers-people input {
+        padding: 7px;
+        width: 250px;
+        font-size: 12px;
+    }
+
+    .percent-tip {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .percent-tip input {
+        padding: 7px;
+        width: 250px;
+        font-size: 12px;
+    }
+
+    .screen-results {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        background-color: #FFC000;
+        width: 320px;
+        border-radius: 10px;
+        padding: 1rem;
+
+    }
+
+    .tip-amount {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        color: #1F3447;
+    }
+
+    .total-tip {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        color: #1F3447;
+
+    }
+
+    .amount {
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .result {
+        display: flex;
+        align-items: center;
+    }
+
+    .result span {
+        font-size: 0.8rem;
+    }
+
+    #h2-result {
+        font-size: 20px;
+    }
+
+    .total {
+        font-size: 12px;
+    }
+
+    .result-total span {
+        font-size: 0.8rem;
+    }
+
+    #h2-result-total {
+        font-size: 20px;
+    }
+
+    #btn-reset {
+        width: 270px;
+        font-size: 12px;
+    }
+
+}
+
+@media only screen and (min-width: 470px) and (max-width: 580px) {
+    body {
+        padding: 1rem;
+    }
+
+    .tip-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        margin-bottom: 10px;
+    }
+
+    .tip-header i {
+        font-size: 15px;
+        color: #1F3447;
+
+    }
+
+    .icons {
+        display: flex;
+        gap: 20px;
+    }
+
+    .h1-title {
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 20px;
+        color: #1F3447;
+    }
+
+    .container {
+
+        margin-top: 10px;
+        max-width: 450px;
+        width: 100%;
+        height: 550px;
+        padding: 30px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 15px;
+        padding: 2rem;
+        position: relative;
+    }
+
+    #msg-error {
+        position: absolute;
+        right: 10%;
+        bottom: 95%;
+    }
+
+    #msg-error span {
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .input-numbers {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 370px;
+    }
+
+
+
+    .input-numbers label {
+        font-weight: bold;
+        font-size: 15px;
+        color: #1F3447;
+    }
+
+    .numbers-bill {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .numbers-bill input {
+        padding: 7px;
+        width: 250px;
+        font-size: 12px;
+
+    }
+
+    .numbers-people {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .numbers-people input {
+        padding: 7px;
+        width: 250px;
+        font-size: 12px;
+    }
+
+    .percent-tip {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .percent-tip input {
+        padding: 7px;
+        width: 250px;
+        font-size: 12px;
+    }
+
+    .screen-results {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        background-color: #FFC000;
+        width: 320px;
+        border-radius: 10px;
+        padding: 1rem;
+
+    }
+
+    .tip-amount {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        color: #1F3447;
+    }
+
+    .total-tip {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        color: #1F3447;
+
+    }
+
+    .amount {
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .result {
+        display: flex;
+        align-items: center;
+    }
+
+    .result span {
+        font-size: 0.8rem;
+    }
+
+    #h2-result {
+        font-size: 20px;
+    }
+
+    .total {
+        font-size: 12px;
+    }
+
+    .result-total span {
+        font-size: 0.8rem;
+    }
+
+    #h2-result-total {
+        font-size: 20px;
+    }
+
+    #btn-reset {
+        width: 270px;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 580px) and (max-width: 680px) {
+    body {
+        padding: 1rem;
+    }
+
+    .tip-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        margin-bottom: 10px;
+    }
+
+    .tip-header i {
+        font-size: 15px;
+        color: #1F3447;
+
+    }
+
+    .icons {
+        display: flex;
+        gap: 20px;
+    }
+
+    .h1-title {
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 20px;
+        color: #1F3447;
+    }
+
+    .container {
+
+        margin-top: 10px;
+        max-width: 450px;
+        width: 100%;
+        height: 550px;
+        padding: 30px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 15px;
+        padding: 2rem;
+        position: relative;
+    }
+
+    #msg-error {
+        position: absolute;
+        right: 10%;
+        bottom: 95%;
+    }
+
+    #msg-error span {
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .input-numbers {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 370px;
+    }
+
+
+
+    .input-numbers label {
+        font-weight: bold;
+        font-size: 15px;
+        color: #1F3447;
+    }
+
+    .numbers-bill {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .numbers-bill input {
+        padding: 7px;
+        width: 250px;
+        font-size: 12px;
+
+    }
+
+    .numbers-people {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .numbers-people input {
+        padding: 7px;
+        width: 250px;
+        font-size: 12px;
+    }
+
+    .percent-tip {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .percent-tip input {
+        padding: 7px;
+        width: 250px;
+        font-size: 12px;
+    }
+
+    .screen-results {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        background-color: #FFC000;
+        width: 320px;
+        border-radius: 10px;
+        padding: 1rem;
+
+    }
+
+    .tip-amount {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        color: #1F3447;
+    }
+
+    .total-tip {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        color: #1F3447;
+
+    }
+
+    .amount {
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .result {
+        display: flex;
+        align-items: center;
+    }
+
+    .result span {
+        font-size: 0.8rem;
+    }
+
+    #h2-result {
+        font-size: 20px;
+    }
+
+    .total {
+        font-size: 12px;
+    }
+
+    .result-total span {
+        font-size: 0.8rem;
+    }
+
+    #h2-result-total {
+        font-size: 20px;
+    }
+
+    #btn-reset {
+        width: 270px;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 680px) and (max-width: 780px) {
+
+    .tip-header {
+        gap: 230px;
+    }
+
+    .tip-header i {
+        font-size: 25px;
+    }
+
+    .h1-title {
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 20px;
+    }
+
+    .container {
+        max-width: 850px;
+        width: 100%;
+        height: 390px;
+        padding: 30px;
+    }
+
+    .input-numbers {
+        width: 375px;
+    }
+
+    .input-numbers label {
+        font-size: 15px;
+    }
+
+    .numbers-bill {
+        gap: 8px;
+    }
+
+    .numbers-bill input {
+        padding: 7px;
+        width: 230px;
+        font-size: 16px;
+    }
+
+    .percent-tip input {
+        padding: 7px;
+        width: 230px;
+        font-size: 16px;
+    }
+
+    .numbers-people input {
+        padding: 7px;
+        width: 230px;
+        font-size: 16px;
+    }
+
+    .screen-results {
+        gap: 15px;
+        width: 375px;
+        padding: 1.5rem;
+    }
+
+    .tip-amount {
+        gap: 60px;
+    }
+
+    .total-tip {
+        gap: 85px;
+    }
+
+    .amount {
+        font-size: 20px;
+    }
+
+
+
+
+
+}

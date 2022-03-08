@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Just a simple tip calculator">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="icon" href="./assets/calculadora.png">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./JS/script.js" defer></script>
+    <title>Tip Calculator</title>
+</head>
+
+<body>
+
+    <header class="tip-header">
+        <div class="tip-title">
+            <h1 class="h1-title">Tip Calculator</h1>
+        </div>
+
+        <div class="icons">
+            <a href="https://www.linkedin.com/in/joaolucascordeiro/"> <i class="fab fa-linkedin"></i> </a>
+            <a href="https://github.com/JoaoLucasCordeiro"> <i class="fab fa-github"></i> </a>
+            <a href="https://www.instagram.com/joaoolucascordeiro/"> <i class="fab fa-instagram"></i> </a>
+        </div>
+    </header>
+
+
+
+
+    <main class="container">
+
+        <div id="msg-error">
+            <span id="span-error">
+                adicione pessoas ou diminua a porcentagem da gorjeta
+            </span>
+        </div>
+
+        <section class="input-numbers">
+
+            <div class="numbers-bill">
+                <label for="input-bill">Valor da conta</label>
+                <input type="number" id="input-bill" placeholder="$">
+            </div>
+
+            <div class="percent-tip">
+
+                <label for="tip-percent">valor da gojeta %</label>
+                <input type="number" id="tip-percent" placeholder="%">
+
+            </div>
+
+
+            <div class="numbers-people">
+                <label for="number-people" id="label-people">Quantas pessoas</label>
+                <input type="number" id="input-people" placeholder="0">
+            </div>
+        </section>
+
+        <!-- segunda seção começa aqui -->
+
+
+        <section class="screen-results">
+
+            <div class="tip-amount">
+                <div class="amount">
+                    <h4 class="h4-amount">Gorjeta</h4>
+                    <span class="span-amount">/ pessoa</span>
+                </div>
+
+                <div class="result">
+                    <h2 id="h2-result">$0,00</h2>
+                    <span id="totaltipspan"> <strong>Gorjeta total:</strong> $0.00</span>
+                </div>
+            </div>
+
+
+
+            <div class="total-tip">
+                <div class="total">
+                    <h4 class="h4-total">Total</h4>
+                    <span class="span-total">/ pessoa</span>
+                </div>
+
+                <div class="result-total">
+                    <h2 id="h2-result-total">$0,00</h2>
+                    <span id="totaltipspan=final"> <strong>Valor total:</strong> $0.00</span>
+                </div>
+            </div>
+
+            <div class="btn-reset">
+                <button id="btn-reset">LIMPAR</button>
+            </div>
+
+
+        </section>
+    </main>
+
+</body>
+
+</html>
